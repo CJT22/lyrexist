@@ -11,6 +11,11 @@ import { query, orderBy, limit, where, onSnapshot } from "https://www.gstatic.co
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+// ADDBASE CONFIG
+// const firebase = require("firebase/app");
+// const fireStore = require("firebase/firestore");
+
 const firebaseConfig = {
   apiKey: "AIzaSyCZbXklUHfz5eJshWMQA_5IIGHW12ty3Q0",
   authDomain: "lyrexist-63456.firebaseapp.com",

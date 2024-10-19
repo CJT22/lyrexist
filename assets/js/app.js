@@ -13,6 +13,7 @@ const qSnapshot = await getDocs(q);
 
 let songs = [];
 let artists = [];
+let albumArtists = [];
 let albums = [];
 let albumAlts = [];
 let genres = [];
@@ -31,17 +32,24 @@ qSnapshot.forEach((doc) => {
     // }
     // console.log(albums.includes([doc.data().album, doc.data().albumAlt]));
 
+    // if(albums.includes(doc.data().album) == false) {
+    //     albums.push(doc.data().album);
+    //     albumAlts.push(doc.data().albumAlt);
+    // }
+    
     if(albums.includes(doc.data().album) == false) {
         albums.push(doc.data().album);
         albumAlts.push(doc.data().albumAlt);
+        albumArtists.push(doc.data().artist.name);
     }
 
     genres.push(doc.data().genre);
 });
 
 // console.log(songs);
-// console.log(albums);
-// console.log(albumAlts);
+console.log(albums);
+console.log(albumAlts);
+console.log(albumArtists);
 // console.log(genres);
 
 const artistsSection = document.querySelector(".artists-section div");
@@ -82,14 +90,14 @@ function popularAlbums() {
                 `<div>
                     <img src="assets/images/Album Covers/${albumAlts[i]}.png">
                     <h3>${albums[i]}</h3>
-                    <p class="sub">Artist</p>
+                    <p class="sub">${albumArtists[i]}</p>
                 </div>`;
             } else {
                 albumsSection.innerHTML += 
                 `<div>
                     <img src="assets/images/Album Covers/${albumAlts[i]}.png">
                     <h3>${albums[i].substring(0, 11)}...</h3>
-                    <p class="sub">Artist</p>
+                    <p class="sub">${albumArtists[i]}</p>
                 </div>`;
             }
         } else {
@@ -98,14 +106,14 @@ function popularAlbums() {
                 `<div>
                     <img src="assets/images/Album Covers/${albums[i]}.png">
                     <h3>${albums[i]}</h3>
-                    <p class="sub">Artist</p>
+                    <p class="sub">${albumArtists[i]}</p>
                 </div>`;
             } else {
                 albumsSection.innerHTML += 
                 `<div>
                     <img src="assets/images/Album Covers/${albums[i]}.png">
                     <h3>${albums[i].substring(0, 11)}...</h3>
-                    <p class="sub">Artist</p>
+                    <p class="sub">${albumArtists[i]}</p>
                 </div>`;
             }
         }
