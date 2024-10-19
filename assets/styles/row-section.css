@@ -1,0 +1,40 @@
+/* Arist, Album, Genre, Music, Other Results, Explore More Sections */
+
+.artists-section,
+.albums-section,
+.genre-section,
+.music-section,
+.other-results-section,
+.explore-more-section,
+.lyrics-section {
+    margin-top: 2rem;
+}
+
+.artist-box, .album-box, .genre-box, .music-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    overflow-x: auto;
+}
+
+.artist-box::-webkit-scrollbar,
+.album-box::-webkit-scrollbar,
+.genre-box::-webkit-scrollbar,
+.music-box::-webkit-scrollbar {
+    width: 0;
+}
+
+.artist-box img, 
+.album-box img,
+.genre-box img,
+.music-box img {
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.album-box img, .genre-box img, .music-box img {
+    border-radius: 25px;
+}

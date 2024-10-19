@@ -1,0 +1,14 @@
+{
+  "name": "addbase-v1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CJT",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "firebase": "^10.14.1"
+  }
+}
