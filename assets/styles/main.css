@@ -83,8 +83,7 @@ aside h2, aside h3,
     object-fit: cover;
     object-position: center;
     margin-top: 1rem;
-    /* border-radius: 1rem; */
-    border-radius: 50%;
+    border-radius: 1rem;
     margin-bottom: 0.5rem;
 }
 
@@ -165,6 +164,7 @@ aside h2, aside h3,
 .suggestion-box {
     padding: 6px 18px;
     border: solid 2px var(--secondary-color);
+    color: var(--secondary-color);
     font-size: 12px;
     border-radius: 16px;
     transition: 0.4s;

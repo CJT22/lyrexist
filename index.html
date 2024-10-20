@@ -39,7 +39,7 @@
         <aside>
             <div class="aside-featured">
                 <h2>Featured Artist</h2>
-                <img src="assets/images/cat.jpg" alt="" class="aside-featured-img">
+                <img src="assets/images/cat.jpg" alt="" class="aside-artist-img">
                 <h3>Artist Name</h3>
                 <p class="sub">Artist's Genre</p>
             </div>
@@ -52,40 +52,40 @@
         </aside>
 
         <section class="search-section">
-           <form action="">
+            <form id="searchForm">
                 <button type="submit">
                     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                 </button>
-                <input type="text" placeholder="Search for a musc, song or artist..">
-           </form>
+                <input type="text" id="searchInput" placeholder="Search for a song, artist or lyrics..">
+            </form>
 
-           <div class="suggestions">
-                <a href="">
+            <div class="suggestions">
+                <a href="search-filter.html?genre=altSongs">
                     <div class="suggestion-box">
                         Alternative/Indie
                     </div>
                 </a>
-                <a href="">
+                <a href="search-filter.html?genre=opmSongs">
                     <div class="suggestion-box">
                         OPM
                     </div>
                 </a>
-                <a href="">
+                <a href="search-filter.html?genre=popRockSongs">
                     <div class="suggestion-box">
                         Pop Rock
                     </div>
                 </a>
-                <a href="">
+                <a href="search-filter.html?genre=kpopSongs">
                     <div class="suggestion-box">
                         KPOP
                     </div>
                 </a>
-                <a href="">
+                <a href="search-filter.html?genre=rbSongs">
                     <div class="suggestion-box">
                         R&B
                     </div>
                 </a>
-           </div>
+            </div>
         </section>
 
         <section class="main-featured">
@@ -94,14 +94,14 @@
 
         <section class="artists-section">
             <h2>Popular Artists</h2>
-            <div class="artist-box mt-l">
+            <div class="artist-box mt-l" id="index-artists-section">
 
             </div>
         </section>
 
         <section class="albums-section">
             <h2>Albums</h2>
-            <div class="album-box mt-l">
+            <div class="album-box mt-l" id="index-albums-section">
                 
             </div>
         </section>
@@ -111,5 +111,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
     <script type="module" src="./assets/js/app.js"></script>
+    <!-- <script type="module" src="./assets/js/index.js"></script> -->
 </body>
 </html>

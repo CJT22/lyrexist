@@ -33,3 +33,4 @@ const db = getFirestore(app);
 export { app, db, doc, collection, getDoc, getDocs, Timestamp, addDoc, query, orderBy, limit, where, onSnapshot };
 
 // const analytics = getAnalytics(app);
+

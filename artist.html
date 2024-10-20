@@ -47,7 +47,7 @@
                 <h2>Songs</h2>
                 <div class="aside-songs-grid">
 
-                    <div class="aside-song-block">
+                    <!-- <div class="aside-song-block">
                         <img src="assets/images/cat.jpg" alt="">
                         <div>
                             <p class="white">Waiting For Love</p>
@@ -60,42 +60,42 @@
                             <p class="white">Waiting For Love</p>
                             <p class="sub mt-s">Avicii</p>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
         </aside>
 
         <section class="search-section">
-            <form action="">
+            <form id="searchForm">
                 <button type="submit">
                     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                 </button>
-                <input type="text" placeholder="Search for a musc, song or artist..">
+                <input type="text" id="searchInput" placeholder="Search for a song, artist or lyrics..">
             </form>
 
             <div class="suggestions">
-                <a href="">
+                <a href="search-filter.html?genre=altIndie">
                     <div class="suggestion-box">
                         Alternative/Indie
                     </div>
                 </a>
-                <a href="">
+                <a href="search-filter.html?genre=opm">
                     <div class="suggestion-box">
                         OPM
                     </div>
                 </a>
-                <a href="">
+                <a href="search-filter.html?genre=popRock">
                     <div class="suggestion-box">
                         Pop Rock
                     </div>
                 </a>
-                <a href="">
+                <a href="search-filter.html?genre=kpop">
                     <div class="suggestion-box">
                         KPOP
                     </div>
                 </a>
-                <a href="">
+                <a href="search-filter.html?genre=rb">
                     <div class="suggestion-box">
                         R&B
                     </div>
@@ -203,6 +203,8 @@
         </section>
 
     </main>
-
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
 </body>
 </html>
