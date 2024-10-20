@@ -257,30 +257,160 @@ function featured() {
 // FUNCTIONS FOR LINKING AND LOADING DYNAMIC WEBPAGE CONTENTS
 // REDIRECT TO ARTIST
 let path = window.location.pathname;
-console.log(path == "/artist.html");
 
 if (path == "/artist.html") {
     window.onload = loadArtist();
 }
 
 function loadArtist() {
-    console.log(songs);
-
     const urlParams = new URLSearchParams(window.location.search);
     const artist = urlParams.get('name');
     let artistSongs = [];
 
-    console.log(artist);
 
     for (let i = 0; i < songs.length; i++) {
-        // console.log(songs.artist.includes(artist));
 
         if (songs[i].artist.name == artist) {
             artistSongs.push(songs[i]);
         }
     }
 
-    console.log(artistSongs);
+    const mainFeatured = document.querySelector("section.main-featured");
+
+    mainFeatured.innerHTML +=
+    `
+    <div>
+        <img src="assets/images/Artist Cover/${artist}.jpg" alt="" class="featured-img">
+    </div>
+    <div class="main-featured-content">
+        <div class="main-featured-artist">
+            <h2>${artist}</h2>
+            <img src="assets/images/Artist Profile/${artist}.png" alt="">
+        </div>
+        <div class="main-featured-content">
+            <p>${artistSongs[0].artist.biography}</p>
+        </div>
+    </div>
+    `;
+
+    const artistAlbumsSection = document.querySelector("section.albums-section .album-box");
+
+    for(let i = 0; i < artistSongs.length; i++) {
+        if (artistSongs[i].albumAlt != undefined) {
+            if (artistSongs[i].album.length <= 10) {
+                artistAlbumsSection.innerHTML += 
+                `
+                <div>
+                    <a href="album.html?name=${artistSongs[i].album}"><img src="assets/images/Album Covers/${artistSongs[i].albumAlt}.png" alt=""></a>
+                    <h3>${artistSongs[i].album}</h3>
+                    <p class="sub">${artist}</p>
+                </div>
+                `;
+            } else {
+                artistAlbumsSection.innerHTML += 
+                `
+                <div>
+                    <a href="album.html?name=${artistSongs[i].album}"><img src="assets/images/Album Covers/${artistSongs[i].albumAlt}.png" alt=""></a>
+                    <h3>${artistSongs[i].album.substring(0, 11)}...</h3>
+                    <p class="sub">${artist}</p>
+                </div>
+                `;
+            }
+        } else {
+            if (artistSongs[i].album.length <= 10) {
+                artistAlbumsSection.innerHTML += 
+                `
+                <div>
+                    <a href="album.html?name=${artistSongs[i].album}"><img src="assets/images/Album Covers/${artistSongs[i].album}.png" alt=""></a>
+                    <h3>${artistSongs[i].album}</h3>
+                    <p class="sub">${artist}</p>
+                </div>
+                `;
+            } else {
+                artistAlbumsSection.innerHTML += 
+                `<div>
+                    <a href="album.html?name=${artistSongs[i].album}"><img src="assets/images/Album Covers/${artistSongs[i].album}.png" alt=""></a>
+                    <h3>${artistSongs[i].album.substring(0, 11)}...</h3>
+                    <p class="sub">${artist}</p>
+                </div>`;
+            }
+        }
+    }
+    
+    const artistMusicSection = document.querySelector("section.music-section .music-box");
+
+    for(let i = 0; i < artistSongs.length; i++) {
+        if (artistSongs[i].albumAlt != undefined) {
+            if (artistSongs[i].title.length <= 10) {
+                artistMusicSection.innerHTML += 
+                `
+                <div>
+                    <a href="song.html?name=${artistSongs[i].title}"><img src="assets/images/Album Covers/${artistSongs[i].albumAlt}.png" alt=""></a>
+                    <h3>${artistSongs[i].title}</h3>
+                    <p class="sub">${artist}t</p>
+                </div>
+                `;
+            } else {
+                artistMusicSection.innerHTML += 
+                `
+                <div>
+                    <a href="song.html?name=${artistSongs[i].title}"><img src="assets/images/Album Covers/${artistSongs[i].albumAlt}.png" alt=""></a>
+                    <h3>${artistSongs[i].title.substring(0, 11)}...</h3>
+                    <p class="sub">${artist}</p>
+                </div>
+                `;
+            }
+        } else {
+            if (artistSongs[i].title.length <= 10) {
+                artistMusicSection.innerHTML += 
+                `
+                <div>
+                    <a href="song.html?name=${artistSongs[i].title}"><img src="assets/images/Album Covers/${artistSongs[i].album}.png" alt=""></a>
+                    <h3>${artistSongs[i].title}</h3>
+                    <p class="sub">${artist}</p>
+                </div>
+                `;
+            } else {
+                artistMusicSection.innerHTML += 
+                `<div>
+                    <a href="song.html?name=${artistSongs[i].title}"><img src="assets/images/Album Covers/${artistSongs[i].album}.png" alt=""></a>
+                    <h3>${artistSongs[i].title.substring(0, 11)}...</h3>
+                    <p class="sub">${artist}</p>
+                </div>`;
+            }
+        }
+    }
+
+    let otherArtists = [];
+    const otherArtistsSection = document.querySelector("section.artists-section .artist-box")
+
+    for (let i = 0; i < 5; i++) {
+        if (artists[i] != artist) {
+            otherArtists.push(artists[i]);
+        }
+    }
+
+    for (let i = 0; i < otherArtists.length; i++) {
+        if (otherArtists[i].length <= 10) {
+            otherArtistsSection.innerHTML +=
+            `
+            <div>
+                <a href="artist.html?name=${otherArtists[i]}"><img src="assets/images/Artist Profile/${otherArtists[i]}.png" alt=""></a>
+                <h3>${otherArtists[i]}</h3>
+                <p class="sub">Artist</p>
+            </div>
+            `;
+        } else {
+            otherArtistsSection.innerHTML +=
+            `
+            <div>
+                <a href="artist.html?name=${otherArtists[i]}"><img src="assets/images/Artist Profile/${otherArtists[i]}.png" alt=""></a>
+                <h3>${otherArtists[i].substring(0, 11)}</h3>
+                <p class="sub">Artist</p>
+            </div>
+            `;
+        }
+    }
 }
 
 // GENRE FILTERING
