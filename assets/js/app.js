@@ -15,7 +15,6 @@ let artists = [];
 let albumArtists = [];
 let albums = [];
 let albumAlts = [];
-let genres = [];
 
 qSnapshot.forEach((doc) => {
     songs.push(doc.data());
@@ -29,8 +28,6 @@ qSnapshot.forEach((doc) => {
         albumAlts.push(doc.data().albumAlt);
         albumArtists.push(doc.data().artist.name);
     }
-
-    genres.push(doc.data().genre);
 });
 
 // Querying genre-specific songs
