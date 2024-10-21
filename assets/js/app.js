@@ -408,7 +408,7 @@ function loadAlbum() {
         mainFeatured.innerHTML += 
         `
         <div>
-            <img src="assets/images/Album Covers/${albumSongs[0].albumAlt}.png" alt="" class="featured-img">
+            <img src="assets/images/Album Covers/${albumSongs[0].albumAlt}.png" alt="" class="featured-img limit-height">
         </div>
         <div class="main-featured-content">
             <div class="main-featured-album">
@@ -421,7 +421,7 @@ function loadAlbum() {
         mainFeatured.innerHTML += 
         `
         <div>
-            <img src="assets/images/Album Covers/${albumSongs[0].album}.png" alt="" class="featured-img">
+            <img src="assets/images/Album Covers/${albumSongs[0].album}.png" alt="" class="featured-img limit-height">
         </div>
         <div class="main-featured-content">
             <div class="main-featured-album">
@@ -710,7 +710,7 @@ function loadGenre() {
     albumsSection.innerHTML += 
     `<p class="sub bold upper">Check out these albums!</p>
     <h2>Our top albums for ${genre[0].genre[1]}</h2>
-    <div class="album-box mt-l">
+    <div class="album-box nowrap scrollbar mt-l">
 
     </div>`;
 
@@ -758,7 +758,7 @@ function loadGenre() {
     artistsSection.innerHTML +=
     `<p class="sub bold upper">Check out these artists!</p>
     <h2>Our top artists for ${genre[0].genre[1]}</h2>
-    <div class="artist-box mt-l">
+    <div class="artist-box nowrap scrollbar mt-l">
     
     </div>`;
 
